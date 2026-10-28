@@ -1,0 +1,681 @@
+{
+  "meta": {
+    "siteName": "Sri Sakthi Lodge",
+    "defaultTitle": "Sri Sakthi Lodge | Lodge in Kanyakumari",
+    "defaultDescription": "Sri Sakthi Lodge offers A/C and non-A/C rooms in Kanyakumari District, Tamil Nadu. Check availability and book online, or call us.",
+    "home": {
+      "title": "Sri Sakthi Lodge | Lodge in Kanyakumari – A/C & Non-A/C Rooms",
+      "description": "Rooms near Kanyakumari at Sri Sakthi Lodge. A/C and non-A/C rooms for a comfortable stay near Vivekananda Rock Memorial and Kanyakumari sunrise. Check availability and book online."
+    },
+    "about": {
+      "title": "About Sri Sakthi Lodge",
+      "description": "Learn about Sri Sakthi Lodge, a budget lodge in Kanyakumari District with A/C and non-A/C rooms."
+    },
+    "rooms": {
+      "title": "Rooms – A/C and Non-A/C Rooms in Kanyakumari",
+      "description": "Browse Single Bed, Double Bed, Three Bed, Five Bed, Standard A/C, Deluxe A/C and A/C Suite rooms at Sri Sakthi Lodge, Kanyakumari."
+    },
+    "roomDetail": {
+      "description": "{name} at Sri Sakthi Lodge, Kanyakumari. See photos, facilities and check availability."
+    },
+    "offers": {
+      "title": "Offers",
+      "description": "Current offers at Sri Sakthi Lodge, Kanyakumari."
+    },
+    "gallery": {
+      "title": "Photo Gallery",
+      "description": "Photos and videos of Sri Sakthi Lodge, its rooms and surroundings in Kanyakumari."
+    },
+    "attractions": {
+      "title": "Nearby Attractions in Kanyakumari",
+      "description": "Plan your visit: stay near Vivekananda Rock Memorial, Thiruvalluvar Statue, Kanyakumari sunrise point, temples and beaches."
+    },
+    "attractionDetail": {
+      "description": "{name} – a place to visit near Sri Sakthi Lodge, Kanyakumari."
+    },
+    "reviews": {
+      "title": "Guest Reviews",
+      "description": "Reviews from guests who stayed at Sri Sakthi Lodge, Kanyakumari."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "description": "Call, WhatsApp or write to Sri Sakthi Lodge in Kanyakumari District for room availability and bookings."
+    },
+    "policies": {
+      "title": "Lodge Policies",
+      "description": "Check-in, late check-out, payment and house rules at Sri Sakthi Lodge."
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "How Sri Sakthi Lodge collects and uses your personal information."
+    },
+    "terms": {
+      "title": "Terms and Conditions",
+      "description": "Terms and conditions for booking and staying at Sri Sakthi Lodge."
+    },
+    "cancellation": {
+      "title": "Cancellation Policy",
+      "description": "How to cancel a booking at Sri Sakthi Lodge and how refunds are handled."
+    },
+    "booking": {
+      "title": "Book Your Stay",
+      "description": "Check availability and book a room at Sri Sakthi Lodge, Kanyakumari."
+    },
+    "bookingLookup": {
+      "title": "Find Your Booking",
+      "description": "Look up or cancel your Sri Sakthi Lodge booking with your booking reference and phone number."
+    },
+    "bookingSuccess": { "title": "Booking Status" },
+    "bookingCancelled": { "title": "Payment Not Completed" },
+    "notFound": { "title": "Page Not Found" }
+  },
+
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "rooms": "Rooms",
+    "offers": "Offers",
+    "gallery": "Gallery",
+    "attractions": "Nearby Attractions",
+    "contact": "Contact",
+    "bookNow": "Book Now",
+    "callNow": "Call Now",
+    "call": "Call",
+    "whatsapp": "WhatsApp",
+    "menu": "Menu",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "language": "Language",
+    "mainNavigation": "Main navigation",
+    "skipToContent": "Skip to main content",
+    "findBooking": "Find my booking",
+    "quickContact": "Quick contact"
+  },
+
+  "common": {
+    "loading": "Loading…",
+    "retry": "Try again",
+    "viewDetails": "View details",
+    "checkAvailability": "Check availability",
+    "contactForRates": "Contact us for rates",
+    "from": "From",
+    "perNight": "per night",
+    "nights": "{count, plural, one {# night} other {# nights}}",
+    "guestsCount": "{count, plural, one {# guest} other {# guests}}",
+    "roomsCount": "{count, plural, one {# room} other {# rooms}}",
+    "adults": "Adults",
+    "children": "Children",
+    "rooms": "Rooms",
+    "back": "Back",
+    "next": "Continue",
+    "send": "Send",
+    "submit": "Submit",
+    "close": "Close",
+    "seeAll": "See all",
+    "optional": "optional",
+    "total": "Total",
+    "ac": "A/C",
+    "nonAc": "Non-A/C",
+    "upTo": "Up to {count, plural, one {# guest} other {# guests}}",
+    "noImage": "Photo coming soon",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "yes": "Yes",
+    "no": "No",
+    "print": "Print or save",
+    "tbc": "To be confirmed",
+    "home": "Home",
+    "viewMap": "View on Google Maps",
+    "required": "required",
+    "page": "Page"
+  },
+
+  "validation": {
+    "required": "This field is required.",
+    "tooShort": "This is too short.",
+    "tooLong": "This is too long.",
+    "email": "Enter a valid email address.",
+    "phone": "Enter a valid 10-digit Indian mobile number.",
+    "date": "Choose a valid date.",
+    "pastDate": "The check-in date cannot be in the past.",
+    "checkoutAfterCheckin": "Check-out must be after check-in.",
+    "tooManyNights": "Please choose a shorter stay or contact us for long stays.",
+    "number": "Enter a valid number.",
+    "rating": "Choose a rating from 1 to 5.",
+    "acceptRequired": "Please tick this box to continue.",
+    "accountNumber": "Enter a valid account number (digits only).",
+    "ifsc": "Enter a valid IFSC code.",
+    "passwordShort": "Use at least 8 characters.",
+    "passwordMismatch": "The passwords do not match.",
+    "dateOrder": "The end date cannot be before the start date.",
+    "summaryTitle": "Please fix the following:"
+  },
+
+  "errors": {
+    "not_configured": "Online booking is not connected yet. Please call or WhatsApp us to book.",
+    "network": "We could not reach the server. Please check your connection and try again.",
+    "timeout": "The request took too long. Please try again.",
+    "unauthorized": "Your session has ended. Please sign in again.",
+    "forbidden": "You do not have permission to do that.",
+    "not_found": "We could not find what you were looking for.",
+    "conflict": "That could not be completed. Please refresh and try again.",
+    "validation": "Please check your details and try again.",
+    "rate_limited": "Too many attempts. Please wait a moment and try again.",
+    "server": "Something went wrong on our side. Please try again shortly.",
+    "aborted": "Request cancelled.",
+    "unknown": "Something went wrong. Please try again.",
+    "pageTitle": "Something went wrong",
+    "pageBody": "This page could not be loaded. Please try again, or contact us to book directly.",
+    "dataUnavailable": "This information is not available right now."
+  },
+
+  "mock": {
+    "banner": "DEVELOPMENT MODE – sample data only. Rooms, prices, reviews and payments shown here are NOT real."
+  },
+
+  "hero": {
+    "headline": "Your Comfortable Stay Near Kanyakumari",
+    "subtitle": "A/C and non-A/C rooms at Sri Sakthi Lodge in Kanyakumari District. Check availability and book online, or call us.",
+    "imageAlt": "Sri Sakthi Lodge (placeholder photo)"
+  },
+
+  "search": {
+    "checkIn": "Check-in",
+    "checkOut": "Check-out",
+    "adults": "Adults",
+    "children": "Children",
+    "rooms": "Rooms",
+    "guests": "Guests",
+    "category": "Room type",
+    "any": "Any room",
+    "submit": "Check availability",
+    "title": "Find a room",
+    "nightsSummary": "{count, plural, one {# night} other {# nights}}"
+  },
+
+  "home": {
+    "roomsTitle": "Our rooms",
+    "roomsSubtitle": "Choose the room type that suits your stay.",
+    "aboutTitle": "About Sri Sakthi Lodge",
+    "amenitiesTitle": "Facilities",
+    "offersTitle": "Current offers",
+    "galleryTitle": "Photo gallery",
+    "attractionsTitle": "Places to visit nearby",
+    "attractionsSubtitle": "Kanyakumari has much to see. Ask us for directions and travel tips when you book.",
+    "reviewsTitle": "What guests say",
+    "faqTitle": "Frequently asked questions",
+    "contactTitle": "Find us",
+    "learnMore": "Learn more"
+  },
+
+  "about": {
+    "heading": "About Sri Sakthi Lodge",
+    "defaultBody": "Sri Sakthi Lodge is a budget lodge in Kanyakumari District, Tamil Nadu. We offer A/C and non-A/C rooms for different group sizes, so you can choose what suits your stay. You can book online, or call or WhatsApp us and we will help.",
+    "whyTitle": "Good to know",
+    "roomTypesTitle": "Room types",
+    "roomTypesBody": "Single Bed, Double Bed, Three Bed, Five Bed, Standard A/C, Deluxe A/C and A/C Suite. Availability and rates are shown live when you search.",
+    "helpTitle": "Need help?",
+    "helpBody": "Call or WhatsApp us and we will help you choose a room."
+  },
+
+  "amenities": {
+    "wifi": "Wi-Fi",
+    "wifiDesc": "Wi-Fi is available for guests.",
+    "parking": "Car parking opposite the lodge",
+    "parkingDesc": "Car parking is available opposite the lodge, about 200 m away (not inside the property).",
+    "breakfast": "Complimentary breakfast",
+    "breakfastDesc": "Breakfast is served 8:00 – 10:00 AM. Please confirm with the lodge when booking.",
+    "ac": "Air conditioning"
+  },
+
+  "rooms": {
+    "heading": "Rooms",
+    "intro": "A/C and non-A/C rooms for individuals, couples, families and groups.",
+    "filters": "Filter rooms",
+    "type": "Room type",
+    "all": "All rooms",
+    "ac": "A/C",
+    "nonAc": "Non-A/C",
+    "capacity": "Guests",
+    "anyCapacity": "Any",
+    "capacityOrMore": "{count}+ guests",
+    "sort": "Sort by",
+    "sortDefault": "Recommended",
+    "sortPriceLow": "Price: low to high",
+    "sortPriceHigh": "Price: high to low",
+    "noResults": "No rooms match these filters.",
+    "noResultsHint": "Try changing the filters, or contact us and we will help you find a room.",
+    "clearFilters": "Clear filters",
+    "emptyTitle": "Room details are coming soon",
+    "emptyBody": "We are updating our room list. Please call or WhatsApp us for availability and rates.",
+    "errorTitle": "We could not load the rooms",
+    "startingFrom": "Starting from",
+    "occupancy": "Sleeps up to {count}",
+    "facilities": "Facilities",
+    "about": "About this room",
+    "related": "Other rooms you may like",
+    "bookThisRoom": "Check availability for this room",
+    "photos": "Photos of {name}",
+    "previousPhoto": "Previous photo",
+    "nextPhoto": "Next photo",
+    "showPhoto": "Show photo {index}",
+    "rates": "Rates",
+    "ratesNote": "Final rates for your dates are shown when you check availability.",
+    "notFoundTitle": "Room not found",
+    "notFoundBody": "This room does not exist or is no longer available.",
+    "allRooms": "See all rooms"
+  },
+
+  "offers": {
+    "heading": "Offers",
+    "validUntil": "Valid until {date}",
+    "validFrom": "From {date}",
+    "terms": "Terms",
+    "bookNow": "Book now",
+    "emptyTitle": "No offers right now",
+    "emptyBody": "There are no active offers at the moment. Please check back soon, or contact us to ask about the best rate for your dates."
+  },
+
+  "gallery": {
+    "heading": "Photo gallery",
+    "all": "All",
+    "rooms": "Rooms",
+    "property": "Property",
+    "surroundings": "Surroundings",
+    "other": "More",
+    "emptyTitle": "Photos coming soon",
+    "emptyBody": "We are preparing our photo gallery. Please contact us if you would like to see pictures of the rooms.",
+    "openImage": "Open photo: {title}",
+    "playVideo": "Play video: {title}",
+    "lightboxLabel": "Photo viewer",
+    "previous": "Previous",
+    "next": "Next",
+    "close": "Close",
+    "video": "Video"
+  },
+
+  "attractions": {
+    "heading": "Nearby attractions",
+    "intro": "Places to visit during your stay in Kanyakumari. Ask us for directions when you book.",
+    "viewOnMap": "Open in Google Maps",
+    "about": "About this place",
+    "categories": {
+      "viewpoint": "Viewpoint",
+      "monument": "Monument",
+      "temple": "Temple",
+      "beach": "Beach",
+      "other": "Place to visit"
+    },
+    "notFoundTitle": "Place not found",
+    "notFoundBody": "We could not find this place.",
+    "allPlaces": "See all places",
+    "defaults": {
+      "sunrise": {
+        "name": "Kanyakumari Sunrise",
+        "description": "Kanyakumari is well known for watching the sunrise over the sea. Ask the lodge for the best viewing spots and timings."
+      },
+      "vivekananda": {
+        "name": "Vivekananda Rock Memorial",
+        "description": "A well-known memorial on a rock just off the Kanyakumari shore, reached by ferry."
+      },
+      "thiruvalluvar": {
+        "name": "Thiruvalluvar Statue",
+        "description": "A large statue of the Tamil poet-saint Thiruvalluvar, standing near the Kanyakumari shore."
+      },
+      "temples": {
+        "name": "Local temples",
+        "description": "There are several temples in and around Kanyakumari. Ask us which ones suit your plans."
+      },
+      "beaches": {
+        "name": "Beaches",
+        "description": "Beaches around Kanyakumari are popular for walks and sea views. Ask us for local advice."
+      }
+    }
+  },
+
+  "reviews": {
+    "heading": "Guest reviews",
+    "emptyTitle": "No reviews yet",
+    "emptyBody": "Reviews from our guests will appear here once they have been approved.",
+    "outOf": "{rating} out of 5",
+    "write": "Share your experience",
+    "formIntro": "Stayed with us? Tell us how it was. Your review will appear on the website after our team approves it.",
+    "name": "Your name",
+    "rating": "Your rating",
+    "text": "Your review",
+    "submit": "Submit review",
+    "sent": "Thank you! Your review has been received and will appear after approval.",
+    "stars": "{count, plural, one {# star} other {# stars}}"
+  },
+
+  "contact": {
+    "heading": "Contact us",
+    "intro": "Call, WhatsApp or send us a message and we will get back to you.",
+    "formTitle": "Send us a message",
+    "name": "Your name",
+    "phone": "Mobile number",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "send": "Send message",
+    "sending": "Sending…",
+    "sent": "Thank you! We have received your message and will contact you soon.",
+    "sentTitle": "Message sent",
+    "sendAnother": "Send another message",
+    "findUs": "Find us",
+    "addressTitle": "Address",
+    "phoneTitle": "Phone",
+    "callPerson": "Call {name}",
+    "whatsappUs": "Chat on WhatsApp",
+    "mapPending": "The exact map location will be added soon. Please call us for directions.",
+    "directions": "Get directions",
+    "hoursNote": "Check-in is from {time}.",
+    "noPhone": "Phone numbers will be added soon.",
+    "whatsappMessage": "Hello Sri Sakthi Lodge, I would like to enquire about a room."
+  },
+
+  "faq": {
+    "heading": "Frequently asked questions",
+    "items": {
+      "checkIn": {
+        "q": "What is the check-in time?",
+        "a": "Check-in is from 12:00 noon."
+      },
+      "parking": {
+        "q": "Is parking available?",
+        "a": "Car parking is available opposite the lodge, about 200 m away. It is not inside the property."
+      },
+      "wifi": {
+        "q": "Is Wi-Fi available?",
+        "a": "Yes, Wi-Fi is available for guests."
+      },
+      "payment": {
+        "q": "How can I pay?",
+        "a": "You can pay an advance online (Razorpay / UPI), pay through PhonePe, or pay cash at the lodge."
+      },
+      "lateCheckout": {
+        "q": "Can I check out late?",
+        "a": "Late check-out is subject to availability and is not guaranteed. Between 11 AM and 1 PM it is free; from 1 PM to 5 PM up to 30% of that day's room rate may be charged; after 5 PM the full day's rate is charged."
+      },
+      "extension": {
+        "q": "Can I extend my stay?",
+        "a": "Extensions are subject to availability. Extra nights are charged at the rate that is current at that time, not the rate of your original booking."
+      },
+      "cancel": {
+        "q": "How do I cancel a booking?",
+        "a": "You can cancel through this website using your booking reference. Refunds, where applicable, are credited within 7 days and you will be asked for your bank details."
+      },
+      "liquor": {
+        "q": "Is liquor allowed in the rooms?",
+        "a": "No. Liquor is not allowed in the rooms."
+      }
+    }
+  },
+
+  "footer": {
+    "tagline": "A budget lodge in Kanyakumari District, Tamil Nadu.",
+    "quickLinks": "Quick links",
+    "roomsTitle": "Rooms",
+    "attractionsTitle": "Places nearby",
+    "policiesTitle": "Policies",
+    "contactTitle": "Contact",
+    "policyLinks": {
+      "policies": "Lodge policies",
+      "cancellation": "Cancellation policy",
+      "terms": "Terms and conditions",
+      "privacy": "Privacy policy"
+    },
+    "rights": "All rights reserved.",
+    "copyright": "© {year} Sri Sakthi Lodge. All rights reserved."
+  },
+
+  "booking": {
+    "heading": "Book your stay",
+    "intro": "Search your dates, choose a room and confirm. Availability and prices come live from the lodge.",
+    "steps": {
+      "search": "Search",
+      "availability": "Rooms",
+      "guest": "Your details",
+      "summary": "Summary",
+      "payment": "Payment",
+      "confirmation": "Confirmation"
+    },
+    "stepOf": "Step {current} of {total}",
+    "unavailableTitle": "Online booking is not available yet",
+    "unavailableBody": "Please call or WhatsApp us to book a room. We are happy to help.",
+    "searchTitle": "When are you staying?",
+    "availability": {
+      "title": "Available rooms",
+      "forDates": "{checkIn} → {checkOut} · {nights} · {guests}",
+      "loading": "Checking availability…",
+      "none": "No rooms are available for these dates",
+      "noneHint": "Try different dates or room type, or contact us — we may be able to help.",
+      "soldOut": "Not available for these dates",
+      "onlyLeft": "Only {count} left",
+      "doesNotFit": "May not fit all guests – try more rooms",
+      "select": "Select this room",
+      "perNight": "{amount} per night",
+      "totalFor": "Total for {nights}",
+      "changeSearch": "Change dates or guests",
+      "taxesNote": "Taxes and charges are shown in the summary if they apply.",
+      "errorTitle": "We could not check availability"
+    },
+    "guest": {
+      "title": "Guest details",
+      "name": "Full name",
+      "phone": "Mobile number",
+      "phoneHint": "We will send updates and may call you on this number.",
+      "email": "Email (optional)",
+      "arrivalTime": "Expected arrival time (optional)",
+      "arrivalHint": "For example: 2:30 PM, or arriving by overnight bus.",
+      "notes": "Special requests (optional)",
+      "paymentMethod": "How would you like to pay?",
+      "payOnline": "Pay advance online",
+      "payOnlineHint": "Pay the advance now with Razorpay / UPI. Your booking is confirmed once payment is verified.",
+      "payAtHotel": "Reserve and pay at the lodge",
+      "payAtHotelHint": "The lodge will confirm your reservation. Cash or PhonePe at the lodge.",
+      "acceptPolicies": "I have read and agree to the lodge policies and cancellation policy.",
+      "policiesLink": "View policies",
+      "noId": "You do not need to enter ID details now. The lodge may ask for ID at check-in."
+    },
+    "summary": {
+      "title": "Review your booking",
+      "room": "Room",
+      "dates": "Dates",
+      "nights": "Nights",
+      "guests": "Guests",
+      "rooms": "Rooms",
+      "rate": "Rate per night",
+      "charges": "Taxes and charges",
+      "total": "Total",
+      "advance": "Advance to pay now",
+      "balance": "Balance at the lodge",
+      "keyPolicies": "Key policies",
+      "checkInInfo": "Check-in from {time}.",
+      "checkOutInfo": "Check-out time: {time}.",
+      "checkOutTbc": "Check-out time will be confirmed by the lodge.",
+      "cancellationInfo": "Cancellations are made through this website. Refunds, where applicable, are credited within 7 days.",
+      "priceNote": "The final price and availability are confirmed by the lodge's system when you book.",
+      "confirmAndContinue": "Confirm booking",
+      "creating": "Creating your booking…",
+      "payAtHotelNote": "Your reservation will be sent to the lodge for confirmation."
+    },
+    "payment": {
+      "title": "Pay your advance",
+      "intro": "Your booking {reference} has been created and is waiting for payment.",
+      "amount": "Amount to pay now",
+      "payNow": "Pay {amount}",
+      "preparing": "Preparing secure payment…",
+      "verifying": "Verifying your payment with the lodge…",
+      "secure": "Payments are processed securely by Razorpay. We never see your card or UPI details.",
+      "failedTitle": "Payment was not completed",
+      "failedBody": "No problem – your booking is saved. You can try again.",
+      "cancelledTitle": "Payment cancelled",
+      "cancelledBody": "You closed the payment window. If you paid, do not pay again – check your booking status first.",
+      "retry": "Try payment again",
+      "checkStatus": "Check payment status",
+      "verifyFailed": "We could not verify your payment yet. If money was deducted, please do not pay again – check your booking status or contact the lodge with reference {reference}.",
+      "mockTitle": "DEV MOCK PAYMENT – no real money moves",
+      "mockSuccess": "Simulate successful payment",
+      "mockFail": "Simulate failed payment",
+      "mockCancel": "Simulate cancelled payment",
+      "scriptError": "The payment window could not be loaded. Please check your connection and try again."
+    },
+    "confirmation": {
+      "heading": "Your booking",
+      "reference": "Booking reference",
+      "status": "Booking status",
+      "paymentStatus": "Payment status",
+      "guestName": "Guest",
+      "room": "Room",
+      "dates": "Dates",
+      "guests": "Guests",
+      "total": "Total",
+      "amountPaid": "Amount paid",
+      "balance": "Balance at the lodge",
+      "contactTitle": "Contact the lodge",
+      "nextTitle": "What happens next",
+      "next1": "Keep your booking reference safe – you need it with your phone number to find or cancel your booking.",
+      "next2": "Check-in is from {time}. Please carry a valid photo ID.",
+      "next3": "Call or WhatsApp us if your plans change.",
+      "confirmedTitle": "Booking confirmed",
+      "confirmedBody": "Thank you! The lodge has confirmed your booking.",
+      "pendingTitle": "Booking received",
+      "pendingBody": "Your booking is waiting for confirmation from the lodge. We will contact you soon.",
+      "awaitingPaymentTitle": "Payment not confirmed yet",
+      "awaitingPaymentBody": "We have not received a verified payment for this booking yet.",
+      "cancelledTitle": "Booking cancelled",
+      "loadError": "We could not load your booking. Please check your details or contact the lodge.",
+      "missing": "No booking to show. Use \"Find my booking\" with your reference and phone number.",
+      "findBooking": "Find my booking",
+      "newBooking": "Make another booking"
+    },
+    "cancelledPage": {
+      "heading": "Payment not completed",
+      "body": "Your payment was cancelled or did not go through. Your booking is not confirmed until payment is verified.",
+      "reference": "Booking reference: {reference}",
+      "tryAgain": "Try again",
+      "contact": "Need help? Call or WhatsApp us."
+    },
+    "lookup": {
+      "heading": "Find your booking",
+      "intro": "Enter your booking reference and the mobile number you used when booking.",
+      "reference": "Booking reference",
+      "phone": "Mobile number",
+      "find": "Find booking",
+      "notFound": "We could not find a booking with those details. Please check and try again.",
+      "found": "Booking found",
+      "cancelTitle": "Cancel this booking",
+      "cancelIntro": "Cancellations are made online. Refunds, where applicable, are credited within 7 days. Whether a refund applies depends on the lodge's cancellation policy for your booking.",
+      "reason": "Reason (optional)",
+      "refundTitle": "Refund details",
+      "refundIntro": "If you paid an advance, give the account where the refund should be credited. These details are sent securely to the lodge and are not saved in your browser.",
+      "accountHolder": "Account holder name",
+      "accountNumber": "Account number",
+      "ifsc": "IFSC code",
+      "confirm": "I want to cancel this booking.",
+      "cancelButton": "Cancel booking",
+      "cancelled": "Your booking has been cancelled. The lodge will process any refund as per policy.",
+      "cannotCancel": "This booking can no longer be cancelled online. Please contact the lodge.",
+      "viewPolicy": "Read the cancellation policy"
+    },
+    "status": {
+      "pending": "Pending",
+      "confirmed": "Confirmed",
+      "checked_in": "Checked in",
+      "checked_out": "Checked out",
+      "cancelled": "Cancelled"
+    },
+    "paymentStatus": {
+      "unpaid": "Not paid",
+      "partial": "Advance paid",
+      "paid": "Paid",
+      "failed": "Failed",
+      "refund_pending": "Refund pending",
+      "refunded": "Refunded"
+    }
+  },
+
+  "policies": {
+    "heading": "Lodge policies",
+    "intro": "Here is what you need to know before you stay. Please contact us if anything is unclear.",
+    "draftTitle": "Some details are being confirmed",
+    "draftBody": "The lodge is still confirming a few details (for example the exact check-out time and whether breakfast applies to every booking). Please ask us when you book.",
+    "pendingBadge": "To be confirmed",
+    "sections": {
+      "checkIn": "Check-in and check-out",
+      "lateCheckout": "Late check-out",
+      "extension": "Extending your stay",
+      "payments": "Payments",
+      "rules": "House rules",
+      "cancellation": "Cancellation"
+    },
+    "checkInText": "Check-in is from {time}.",
+    "checkOutText": "Check-out time: {time}.",
+    "checkOutPending": "The check-out time is being confirmed by the lodge. Please ask when you book.",
+    "lateCheckoutText": "Late check-out is subject to availability and is not guaranteed.",
+    "lateFree": "11:00 AM – 1:00 PM: no charge.",
+    "latePartial": "1:00 PM – 5:00 PM: up to 30% of that day's room rate.",
+    "lateFull": "After 5:00 PM: 100% of that day's room rate.",
+    "extensionText": "Extending your stay is subject to availability. Extra nights are charged at the current rate on the day, not the rate of your original booking.",
+    "paymentsText": "You can pay an advance online (Razorpay / UPI), pay with PhonePe, or pay cash at the lodge.",
+    "rulesNoLiquor": "Liquor is not allowed in the rooms.",
+    "rulesDamage": "Guests are responsible for any damage to the lodge's property.",
+    "cancellationText": "Bookings are cancelled through this website. Where a refund applies, it is credited within 7 days and you will be asked for your bank details.",
+    "cancellationPending": "Whether a refund applies to every type of booking is being confirmed by the lodge.",
+    "readMore": "Read the full policy",
+    "relatedTitle": "More information",
+    "cancellationPage": {
+      "heading": "Cancellation policy",
+      "how": "How to cancel",
+      "howText": "Use \"Find my booking\" on this website with your booking reference and phone number, then choose \"Cancel booking\".",
+      "refunds": "Refunds",
+      "refundsText": "Where a refund applies, it is credited within 7 days. You will be asked to provide your bank details so the refund can be sent.",
+      "pendingTitle": "Still being confirmed",
+      "pendingText": "The lodge is confirming how the policy applies to every booking type. No cancellation deadlines or refund percentages are published yet – please ask us before you pay if you need to know.",
+      "findBooking": "Find my booking"
+    },
+    "termsPage": {
+      "heading": "Terms and conditions",
+      "bookings": "Bookings and availability",
+      "bookingsText": "A booking is confirmed only when the lodge's system shows it as confirmed. Rooms are subject to availability.",
+      "checkInOut": "Check-in, check-out and extensions",
+      "payments": "Payments",
+      "rules": "Conduct and damage",
+      "cancellation": "Cancellation and refunds",
+      "draftNotice": "These terms are a plain-language summary of the lodge's current rules and are being reviewed. They are not legal advice."
+    },
+    "privacyPage": {
+      "heading": "Privacy policy",
+      "draftNotice": "This is a plain-language description of the personal information this website handles. It is being reviewed by the lodge and does not claim compliance with any specific law.",
+      "collectTitle": "What we collect",
+      "collectIntro": "We only collect what is needed to handle bookings, enquiries and reviews:",
+      "collect1": "Booking details: name, mobile number, email (if you give it), dates, number of guests and any notes you add.",
+      "collect2": "Enquiries: the name, phone, email and message you send through the contact form.",
+      "collect3": "Reviews: the name and review text you choose to submit.",
+      "collect4": "Refund details: bank details you provide when cancelling a paid booking. These are sent securely to the lodge and not stored in your browser.",
+      "collect5": "Payment information: card or UPI details are entered with Razorpay, not on this website. We receive only a payment confirmation.",
+      "collect6": "A cookie that remembers your language choice.",
+      "useTitle": "How we use it",
+      "useText": "To confirm and manage your stay, reply to your questions, process payments and refunds, and publish reviews you agree to share.",
+      "shareTitle": "Who sees it",
+      "shareText": "Lodge staff, and our service providers where needed (for example the payment provider). We do not sell your information.",
+      "idTitle": "ID documents",
+      "idText": "This website does not ask you to upload ID documents. The lodge may ask to see ID when you arrive.",
+      "choicesTitle": "Your choices",
+      "choicesText": "Contact the lodge to ask about, correct or remove your information."
+    }
+  },
+
+  "notFound": {
+    "heading": "Page not found",
+    "body": "Sorry, we could not find the page you were looking for.",
+    "goHome": "Go to home page",
+    "viewRooms": "View rooms"
+  },
+
+  "stickyBar": {
+    "label": "Quick actions"
+  }
+}
