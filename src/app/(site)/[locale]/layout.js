@@ -1,7 +1,11 @@
 import "@/app/globals.css";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
+import {
+  getMessages,
+  getTranslations,
+  setRequestLocale,
+} from "next-intl/server";
 import { Toaster } from "sonner";
 import { routing } from "@/i18n/routing";
 import { env } from "@/config/environment";
@@ -49,7 +53,11 @@ export async function generateMetadata({ params }) {
     description: t("defaultDescription"),
     applicationName: lodge.name,
     icons: { icon: "/logo-small.png", apple: "/logo-small.png" },
-    openGraph: { siteName: lodge.name, type: "website", images: [{ url: "/og-default.jpg" }] },
+    openGraph: {
+      siteName: lodge.name,
+      type: "website",
+      images: [{ url: "/og-default.jpg" }],
+    },
     formatDetection: { telephone: false },
   };
 }
@@ -70,11 +78,17 @@ export default async function LocaleLayout({ children, params }) {
     getTranslations("nav"),
     safely(getContent(), {}),
   ]);
-  const clientMessages = Object.fromEntries(CLIENT_NAMESPACES.map((ns) => [ns, messages[ns]]));
+  const clientMessages = Object.fromEntries(
+    CLIENT_NAMESPACES.map((ns) => [ns, messages[ns]]),
+  );
 
   return (
-    <html lang={LOCALE_LABELS[locale]?.htmlLang || locale} className={`${inter.variable} ${notoSansTamil.variable}`}>
-      <body className="min-h-dvh pb-20 md:pb-0">
+    <html
+      lang={LOCALE_LABELS[locale]?.htmlLang || locale}
+      className={`${inter.variable} ${notoSansTamil.variable}`}
+      suppressHydrationWarning
+    >
+      <body className="min-h-dvh pb-20 md:pb-0" suppressHydrationWarning>
         <NextIntlClientProvider locale={locale} messages={clientMessages}>
           <a
             href="#main"
@@ -83,7 +97,10 @@ export default async function LocaleLayout({ children, params }) {
             {t("skipToContent")}
           </a>
           <MockBanner text={messages.mock?.banner} />
-          <AnnouncementBanner announcement={content?.announcement} locale={locale} />
+          <AnnouncementBanner
+            announcement={content?.announcement}
+            locale={locale}
+          />
           <Header />
           <main id="main" tabIndex={-1} className="outline-none">
             {children}
