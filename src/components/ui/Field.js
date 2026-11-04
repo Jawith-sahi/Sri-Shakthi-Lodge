@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { cn } from "@/lib/utils/cn";
 import { FieldError } from "@/components/ui/FieldError";
@@ -43,6 +43,7 @@ export function Input({ name, label, hint, error, required, optionalText, classN
           id={id}
           name={name}
           ref={ref}
+          suppressHydrationWarning
           aria-invalid={error ? true : undefined}
           aria-describedby={describe}
           aria-required={required || undefined}
@@ -63,6 +64,7 @@ export function Textarea({ name, label, hint, error, required, optionalText, cla
           name={name}
           ref={ref}
           rows={rows}
+          suppressHydrationWarning
           aria-invalid={error ? true : undefined}
           aria-describedby={describe}
           aria-required={required || undefined}
@@ -82,6 +84,7 @@ export function Select({ name, label, hint, error, required, optionalText, class
           id={id}
           name={name}
           ref={ref}
+          suppressHydrationWarning
           aria-invalid={error ? true : undefined}
           aria-describedby={describe}
           aria-required={required || undefined}
@@ -105,6 +108,7 @@ export function Checkbox({ name, label, error, className, ref, children, ...prop
           name={name}
           ref={ref}
           type="checkbox"
+          suppressHydrationWarning
           aria-invalid={error ? true : undefined}
           aria-describedby={error ? `${id}-error` : undefined}
           className="mt-0.5 h-5 w-5 shrink-0 rounded border-line text-primary accent-[var(--color-primary-800)]"

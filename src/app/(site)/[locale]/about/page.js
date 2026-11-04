@@ -68,4 +68,5 @@ export default async function AboutPage({ params }) {
       </Section>
     </>
   );
+  
 }
