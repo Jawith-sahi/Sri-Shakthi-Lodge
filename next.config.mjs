@@ -32,8 +32,31 @@ const nextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   images: {
-    remotePatterns: buildRemotePatterns(),
+    remotePatterns: [
+      ...buildRemotePatterns(),
+      {
+        protocol: "http",
+        hostname: "localhost",
+        port: "5005",
+        pathname: "/**",
+      },
+      {
+        protocol: "http",
+        hostname: "127.0.0.1",
+        port: "5005",
+        pathname: "/**",
+      },
+    ],
     formats: ["image/avif", "image/webp"],
+  },
+  async rewrites() {
+    const apiBase = (process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:5005").replace(/\/+$/, "");
+    return [
+      {
+        source: "/uploads/:path*",
+        destination: `${apiBase}/uploads/:path*`,
+      },
+    ];
   },
   async headers() {
     return [

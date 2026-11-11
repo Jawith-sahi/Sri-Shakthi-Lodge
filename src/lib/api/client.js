@@ -82,16 +82,76 @@ function normaliseErrorBody(body) {
   return out;
 }
 
-let tokenProvider = null;
-/** Optional: if the backend uses bearer tokens, register a getter. Keep the token in memory only. */
+let tokenProvider = () => {
+  if (typeof window !== "undefined") {
+    try {
+      return sessionStorage.getItem("sri_sakthi_token") || null;
+    } catch {
+      return null;
+    }
+  }
+  return null;
+};
+
+export function setAccessToken(token) {
+  if (typeof window !== "undefined") {
+    try {
+      if (token) sessionStorage.setItem("sri_sakthi_token", token);
+      else sessionStorage.removeItem("sri_sakthi_token");
+    } catch {
+      /* ignore */
+    }
+  }
+}
+
+export function clearAccessToken() {
+  setAccessToken(null);
+}
+
+/** Optional: if the backend uses custom bearer token provider, register a getter. */
 export function setAccessTokenProvider(fn) {
-  tokenProvider = typeof fn === "function" ? fn : null;
+  tokenProvider = typeof fn === "function" ? fn : () => {
+    if (typeof window !== "undefined") {
+      try { return sessionStorage.getItem("sri_sakthi_token") || null; } catch { return null; }
+    }
+    return null;
+  };
 }
 
 let unauthorizedHandler = null;
 /** Admin layout registers a handler that redirects to the login page on 401. */
 export function setUnauthorizedHandler(fn) {
   unauthorizedHandler = typeof fn === "function" ? fn : null;
+}
+
+// ── Silent Token Refresh ─────────────────────────────────────────────────────
+// When a 401 is received for an authenticated request, attempt one silent
+// token refresh using the HttpOnly RefreshToken cookie.  If refresh succeeds,
+// retry the original request with the new token.  If refresh also fails,
+// clear local state and redirect to login.
+let _refreshPromise = null; // deduplicate concurrent refresh attempts
+
+async function _silentRefresh(base) {
+  if (!_refreshPromise) {
+    _refreshPromise = fetch(`${base}/api/v1/auth/refresh`, {
+      method: "POST",
+      credentials: "include",
+      cache: "no-store",
+      headers: { Accept: "application/json" },
+    })
+      .then(async (res) => {
+        if (!res.ok) return null;
+        const data = await res.json().catch(() => null);
+        const newToken = data?.accessToken || data?.token || null;
+        if (newToken) setAccessToken(newToken);
+        return newToken;
+      })
+      .catch(() => null)
+      .finally(() => {
+        _refreshPromise = null;
+      });
+  }
+  return _refreshPromise;
 }
 
 function buildUrl(path, query) {
@@ -123,6 +183,10 @@ function buildUrl(path, query) {
  * @param {"json"|"blob"} [options.responseType]
  */
 export async function apiRequest(path, options = {}) {
+  return _apiRequestInner(path, options, false);
+}
+
+async function _apiRequestInner(path, options, isRetry) {
   const {
     method = "GET",
     query,
@@ -174,7 +238,7 @@ export async function apiRequest(path, options = {}) {
     headers["Content-Type"] = "application/json";
     init.body = JSON.stringify(body);
   }
-  if (auth && !isServer) init.credentials = "include";
+  if (!isServer) init.credentials = "include";
 
   // Caching: only public GET data may be cached by Next. Everything else is never cached.
   if (method === "GET" && (revalidate !== undefined || tags)) {
@@ -222,7 +286,19 @@ export async function apiRequest(path, options = {}) {
       serverMessage,
       fieldErrors,
     });
-    if (response.status === 401 && auth && unauthorizedHandler) unauthorizedHandler(error);
+    if (response.status === 401) {
+      // ── Silent refresh & retry (only once, only on browser, only for auth requests) ──
+      if (auth && !isRetry && !isServer) {
+        const newToken = await _silentRefresh(env.apiBaseUrl);
+        if (newToken) {
+          // Retry the original request once with the refreshed token
+          return _apiRequestInner(path, options, true);
+        }
+      }
+      // Refresh failed or already retried — clear token and redirect to login
+      clearAccessToken();
+      if (auth && unauthorizedHandler) unauthorizedHandler(error);
+    }
     throw error;
   }
 

@@ -19,10 +19,22 @@ function hostAllowed(src) {
  * Always pass dimensions or `fill` (+ a relatively positioned parent) so layout never shifts.
  */
 export function SmartImage({ src, alt = "", priority = false, sizes, ...props }) {
-  const source = src || "/placeholders/room.svg";
-  const isAbsolute = /^https?:\/\//i.test(source);
+  let source = src || "/placeholders/room.svg";
+  
+  // If the path is a backend upload, ensure it targets the API base URL
+  if (typeof source === "string" && source.startsWith("/uploads/") && env.apiBaseUrl) {
+    source = `${env.apiBaseUrl}${source}`;
+  }
+
+  const isAbsolute = typeof source === "string" && /^https?:\/\//i.test(source);
+  const isUpload = typeof source === "string" && source.includes("/uploads/");
+
   const unoptimized =
-    source.endsWith(".svg") || source.startsWith("data:") || source.startsWith("blob:") || (isAbsolute && !hostAllowed(source));
+    source.endsWith(".svg") ||
+    source.startsWith("data:") ||
+    source.startsWith("blob:") ||
+    isUpload ||
+    (isAbsolute && !hostAllowed(source));
 
   return (
     <Image

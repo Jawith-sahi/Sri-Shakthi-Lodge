@@ -44,11 +44,11 @@ export function BookingDetail({ id }) {
   const { loading, booking, error } = state;
 
   if (loading && !booking) return <Skeleton className="h-96 w-full" />;
-  if (error) {
+  if (error || !booking) {
     return (
       <ErrorState
-        title={error.code === "not_found" ? "Booking not found" : "We could not load this booking"}
-        body={getAdminErrorMessage(error)}
+        title={error?.code === "not_found" || !booking ? "Booking not found" : "We could not load this booking"}
+        body={error ? getAdminErrorMessage(error) : "We could not find the requested booking."}
         action={
           <>
             <Button variant="outline" onClick={load}>Try again</Button>
@@ -60,13 +60,20 @@ export function BookingDetail({ id }) {
   }
 
   // The backend says which moves are allowed; the built-in map is only a fallback hint.
-  const allowed = booking.allowedTransitions || BOOKING_TRANSITIONS[booking.status] || [];
+  const allowed = booking?.allowedTransitions || (booking?.status ? BOOKING_TRANSITIONS[booking.status] : []) || [];
 
   async function applyStatus() {
-    const updated =
-      pending === "cancelled" ? await adminCancelBooking(booking.id) : await adminUpdateBookingStatus(booking.id, pending);
-    setState({ loading: false, booking: updated, error: null });
-    toast.success("Booking updated.");
+    try {
+      const updated =
+        pending === "cancelled" ? await adminCancelBooking(booking.id) : await adminUpdateBookingStatus(booking.id, pending);
+      const nextBooking = updated || (await adminGetBooking(booking.id));
+      setState({ loading: false, booking: nextBooking, error: null });
+      toast.success("Booking updated.");
+    } catch (err) {
+      toast.error(getAdminErrorMessage(err));
+    } finally {
+      setPending(null);
+    }
   }
 
   return (

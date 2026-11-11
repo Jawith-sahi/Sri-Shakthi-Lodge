@@ -1,14 +1,19 @@
-import { apiRequest } from "@/lib/api/client";
+import { apiRequest, setAccessToken, clearAccessToken } from "@/lib/api/client";
 import { endpoints } from "@/lib/api/endpoints";
 import { getMock, isMockApi } from "@/lib/api/helpers";
 
 /** @returns {Promise<{id:string,name:string,username:string,role:"owner"|"staff"}>} */
 export async function login({ username, password }) {
   if (isMockApi()) return (await getMock()).auth.login({ username, password });
-  return apiRequest(endpoints.auth.login, { method: "POST", body: { username, password }, auth: false });
+  const result = await apiRequest(endpoints.auth.login, { method: "POST", body: { username, password } });
+  if (result?.accessToken || result?.token) {
+    setAccessToken(result.accessToken || result.token);
+  }
+  return result;
 }
 
 export async function logout() {
+  clearAccessToken();
   if (isMockApi()) return (await getMock()).auth.logout();
   return apiRequest(endpoints.auth.logout, { method: "POST" });
 }
@@ -20,7 +25,11 @@ export async function getCurrentUser(signal) {
 
 export async function refreshSession() {
   if (isMockApi()) return null;
-  return apiRequest(endpoints.auth.refresh, { method: "POST" });
+  const result = await apiRequest(endpoints.auth.refresh, { method: "POST" });
+  if (result?.accessToken || result?.token) {
+    setAccessToken(result.accessToken || result.token);
+  }
+  return result;
 }
 
 export async function changePassword({ currentPassword, newPassword }) {

@@ -1,9 +1,9 @@
 "use client";
 
-import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { setUnauthorizedHandler } from "@/lib/api/client";
-import { getCurrentUser, logout as apiLogout } from "@/lib/api/auth.api";
+import { getCurrentUser, logout as apiLogout, refreshSession } from "@/lib/api/auth.api";
 import { clearAdminHint } from "@/lib/auth/session";
 import { Spinner } from "@/components/ui/Spinner";
 
@@ -15,6 +15,9 @@ export function useAdmin() {
   return ctx;
 }
 
+// Proactively rotate token pair every 10 minutes (before the 15-min AccessToken expires)
+const PROACTIVE_REFRESH_MS = 10 * 60 * 1000; // 10 minutes
+
 /**
  * Guards the admin area for UX. A 401 from ANY admin API call sends the user to the login page.
  * Real protection is the backend; this only avoids showing screens that cannot work.
@@ -24,10 +27,12 @@ export function AdminProvider({ children }) {
   const pathname = usePathname();
   const [user, setUser] = useState(null);
   const [ready, setReady] = useState(false);
+  const refreshTimerRef = useRef(null);
 
   const toLogin = useCallback(() => {
     clearAdminHint();
     setUser(null);
+    if (refreshTimerRef.current) clearInterval(refreshTimerRef.current);
     router.replace(`/admin/login?next=${encodeURIComponent(pathname)}`);
   }, [router, pathname]);
 
@@ -36,23 +41,43 @@ export function AdminProvider({ children }) {
     return () => setUnauthorizedHandler(null);
   }, [toLogin]);
 
+  // Load current user on mount
   useEffect(() => {
-    const controller = new AbortController();
-    getCurrentUser(controller.signal)
+    let alive = true;
+    getCurrentUser()
       .then((u) => {
+        if (!alive) return;
         setUser(u);
         setReady(true);
       })
       .catch((error) => {
-        if (error.isAborted) return;
+        if (!alive) return;
         if (error.code === "unauthorized") toLogin();
         else setReady(true); // backend unreachable: let screens show their own error states
       });
-    return () => controller.abort();
+    return () => {
+      alive = false;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  // Proactive background token refresh every 60 minutes
+  useEffect(() => {
+    if (!ready || !user) return;
+    refreshTimerRef.current = setInterval(async () => {
+      try {
+        await refreshSession();
+      } catch {
+        // Refresh failed silently — the 401 interceptor will handle it on next request
+      }
+    }, PROACTIVE_REFRESH_MS);
+    return () => {
+      if (refreshTimerRef.current) clearInterval(refreshTimerRef.current);
+    };
+  }, [ready, user]);
+
   const logout = useCallback(async () => {
+    if (refreshTimerRef.current) clearInterval(refreshTimerRef.current);
     try {
       await apiLogout();
     } finally {
